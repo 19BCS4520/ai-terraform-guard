@@ -2,14 +2,14 @@
   "results": {
     "violations": [
       {
-        "rule_name": "awsIngressPort22",
-        "description": "Security group rule allows ingress from 0.0.0.0/0 to port 22 (SSH).",
+        "rule_name": "iamAdminRole",
+        "description": "IAM Role allows AdministratorAccess.",
         "severity": "HIGH",
-        "category": "Network Security",
-        "resource_name": "web_server_sg",
-        "resource_type": "aws_security_group",
-        "file": "sg_violation.tf",
-        "line": 10
+        "category": "IAM",
+        "resource_name": "EC2LabRole",
+        "resource_type": "aws_iam_role",
+        "file": "iam_attack.tf",
+        "line": 1
       }
     ]
   }
