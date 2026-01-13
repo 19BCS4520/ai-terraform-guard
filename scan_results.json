@@ -2,14 +2,14 @@
   "results": {
     "violations": [
       {
-        "rule_name": "s3EnforceUserACL",
-        "description": "S3 bucket Access is allowed to all AWS Account Users.",
+        "rule_name": "awsIngressPort22",
+        "description": "Security group rule allows ingress from 0.0.0.0/0 to port 22 (SSH).",
         "severity": "HIGH",
-        "category": "S3",
-        "resource_name": "sensitive_data_acl",
-        "resource_type": "aws_s3_bucket_acl",
-        "file": "s3_violation.tf",
-        "line": 13
+        "category": "Network Security",
+        "resource_name": "web_server_sg",
+        "resource_type": "aws_security_group",
+        "file": "sg_violation.tf",
+        "line": 10
       }
     ]
   }
