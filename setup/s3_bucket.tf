@@ -1,8 +1,8 @@
 resource "aws_s3_bucket" "sensitive_data" {
-  bucket = "company-financial-records-ParikshitSharma" # Bucket name must be globally unique
+  bucket = "parikshit-financial-records-Prigtrgkrggh5" # Bucket name must be globally unique
 
   tags = {
-    Environment = "Production"
+    Environment = "dev-barchart"
     DataLevel   = "Confidential"
   }
 }

@@ -1,0 +1,16 @@
+{
+  "results": {
+    "violations": [
+      {
+        "rule_name": "s3EnforceUserACL",
+        "description": "S3 bucket Access is allowed to all AWS Account Users.",
+        "severity": "HIGH",
+        "category": "S3",
+        "resource_name": "sensitive_data_acl",
+        "resource_type": "aws_s3_bucket_acl",
+        "file": "s3_violation.tf",
+        "line": 13
+      }
+    ]
+  }
+}
