@@ -1,0 +1,21 @@
+name: AI Security Gate
+
+on: [pull_request]
+
+jobs:
+  ai-check:
+    runs-on: self-hosted  # <--- This targets your AWS Runner
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run Terrascan
+        # Scans the 'infrastructure' folder
+        run: |
+          terrascan scan -t aws -i terraform -d infrastructure --output json > scan_results.json || true
+          cat scan_results.json
+
+      - name: AI Risk Assessment
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python3 scripts/review_agent.py
