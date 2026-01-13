@@ -2,14 +2,24 @@
   "results": {
     "violations": [
       {
-        "rule_name": "iamAdminRole",
-        "description": "IAM Role allows AdministratorAccess.",
+        "rule_name": "rdsPublicAccess",
+        "description": "RDS instance is publicly accessible.",
         "severity": "HIGH",
-        "category": "IAM",
-        "resource_name": "EC2LabRole",
-        "resource_type": "aws_iam_role",
-        "file": "iam_attack.tf",
-        "line": 1
+        "category": "Network Security",
+        "resource_name": "payments_db",
+        "resource_type": "aws_db_instance",
+        "file": "rds_critical.tf",
+        "line": 12
+      },
+      {
+        "rule_name": "rdsEncrypted",
+        "description": "RDS storage is not encrypted.",
+        "severity": "HIGH",
+        "category": "Compliance",
+        "resource_name": "payments_db",
+        "resource_type": "aws_db_instance",
+        "file": "rds_critical.tf",
+        "line": 15
       }
     ]
   }
